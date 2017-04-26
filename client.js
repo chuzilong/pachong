@@ -1,6 +1,60 @@
 var request=require("request");
 var cheerio=require("cheerio");
 var mysql=require("mysql");
+/*
+* 1. 要保证代码本身的正确性
+*
+* 2. 申请成为百度云的开发者
+ *
+ * 3.  登陆百度开放云
+ * 4.  充值
+ * 5.  进入应用引擎
+ * 6.  添加部署
+ * 7.  进入部署界面  进行添加
+ *
+ * 8.   确定你的域名  选择nodejs(最高版本)引擎  选择需要的内存  点击付款
+ *
+ * 9.  进入扩展服务 创建mysql
+ *
+ * 10. 将自己的本地mysql的表结构导入到远程的mysql
+ *
+ * 11. 回到部署列表，拷贝git地址
+ * 12.  在你的本地创建文件，进入文件 ,运行 git clone 地址，将远程的内容拷贝到你的本地
+ *
+ * 13.  修改package.json  选项"scripts": {
+ "start": "node server.js",将以前安装所有的依赖项目配置，拷贝到"dependencies": {}
+
+   14 .  修改端口  18080
+
+   15.  修改你的数据库配置文件 （sereve.js,client.js）
+
+     host : 远程的地址
+     port:端口
+     user:""
+     password:""
+     database:"XVwgtByURdZcmIuDrkBo"
+
+
+     16.  修改一下 server.js 加上一个路由，用来手动爬虫
+ app.get('/run', function (req, res) {
+ require("./client");
+ res.end();
+
+ });
+
+ 17.  上传你的代码  git add .
+                   git commit -m "dsa"
+                   git push
+
+
+18. 打开首页 运行 爬虫 xinzhou1.duapp.com/run，往数据库里面抓取内容
+
+19. 回到首页，按照正常的流程去访问
+
+*
+*
+*
+* */
 
 var connect=mysql.createConnection({
     host:"localhost",

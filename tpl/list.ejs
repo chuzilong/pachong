@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <title>忻州师院</title>
+
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="/js/touch.js"></script>
+    <script src="/js/index.js"></script>
+</head>
+<body>
+    <a href="http://baidu.com" class="header">
+         列表页
+    </a>
+    <div class="menu">
+       <div class="menubox">
+        <a href="/">
+            首页
+        </a>
+
+    <% for(var i=0;i<category.length;i++){%>
+        <a href="/list/<%=category[i].id%>">
+            <%=category[i].catname%>
+        </a>
+    <%}%>
+       </div>
+    </div>
+
+
+
+    <div class="imgbox">
+        <a href="" class="imgboxlist">
+
+        </a>
+    </div>
+
+<div>
+    <%for(var i=0;i<info.length;i++){%>
+    <div class="list">
+        <div class="left" style="background-image:url(<%=info[i].thumbnail%>)">
+        </div>
+        <div class="right">
+               <h3>
+                    <%=info[i].title%>
+               </h3>
+               <p>
+                  这是简介
+               </p>
+        </div>
+    </div>
+    <%}%>
+
+</div>
+    <div class="space"></div>
+
+    <div class="footer">
+        <a href="">首页</a>
+        <a href="">设置</a>
+        <a href="">个人中心</a>
+        <a href="">新闻中心</a>
+    </div>
+
+</body>
+</html>
